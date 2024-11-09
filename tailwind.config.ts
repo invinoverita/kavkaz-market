@@ -54,10 +54,10 @@ module.exports = {
         blink: 'blink 1.4s both infinite',
       },
       backgroundImage: {
-        "slide-bg": "url(public/images/slideBg.png)",
-        "payment": "url(public/images/payment.jpg)",
-        "delivery": "url(public/images/delivery.jpg)",
-        "sertificates": "url(public/images/sertificates.jpg)",
+        "slide-bg": "url(../../public/images/slideBg.png)",
+        "payment": "url(../../public/images/payment.jpg)",
+        "delivery": "url(../../public/images/delivery.jpg)",
+        "sertificates": "url(../../public/images/sertificates.jpg)",
       }
     },
   },
