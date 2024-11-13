@@ -1,12 +1,8 @@
-import dynamic from 'next/dynamic';
 import { FC, Fragment } from 'react';
 
-import { Checkbox } from 'src/components/UI';
 import { TypeCategory } from 'src/types';
 
-const Link = dynamic(() => import('../../components/Link/Link'), {
-  ssr: false,
-});
+import { FilterStroke } from 'src/components/FilterStroke/FilterStroke';
 
 type TypeCategoriesFilterProps = {
   category_id: null | string;
@@ -19,26 +15,15 @@ const CategoriesFilter: FC<TypeCategoriesFilterProps> = ({
 }) => {
   return (
     <Fragment>
-      <div>
-        <Link href={`/catalog/all`}>
-          <Checkbox
-            label="Все"
-            name="all"
-            defaultChecked={category_id === 'all'}
+      {categories.map((category) => {
+        return !(category.parent) &&
+          <FilterStroke
+            isSelected={category_id === category.id.toPrecision()}
+            key={category.id}
+            category={category}
+            categories={categories}
           />
-        </Link>
-      </div>
-      {categories.map((category) => (
-        <div className="mt-2 xl:mt-3" key={category.id}>
-          <Link href={`/catalog/${category.id}`}>
-            <Checkbox
-              defaultChecked={category_id === category.id.toPrecision()}
-              label={category.name}
-              name={category.id.toPrecision()}
-            />
-          </Link>
-        </div>
-      ))}
+      })}
     </Fragment>
   );
 };

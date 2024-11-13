@@ -9,6 +9,20 @@ export type TypeCategory = {
   created_at: number;
 };
 
+export type TypeCategoryTree = {
+  key: number,
+  name: string,
+  nom_count: number,
+  description: string,
+  code: number,
+  status: boolean,
+  parent: number,
+  children: TypeCategoryTree | [],
+  expanded_flag: boolean,
+  updated_at: number,
+  created_at: number,
+}
+
 export interface TypeProduct {
   id: number;
   name: string;

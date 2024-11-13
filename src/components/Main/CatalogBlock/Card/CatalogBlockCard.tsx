@@ -16,7 +16,7 @@ const CatalogBlockCard: FC<TypeCatalogBlockCardProps> = ({
   category,
 }) => {
   return (
-    <Link href="/">
+    <Link href={"/catalog/" + category.id}>
       <div className="w-[400px] h-[428px] bg-light rounded-lg p-7 flex flex-col gap-7">
         <div className="flex justify-between items-start">
           <aside>
@@ -27,7 +27,7 @@ const CatalogBlockCard: FC<TypeCatalogBlockCardProps> = ({
             <img src={arrow.src} />
           </div>
         </div>
-        
+
       </div>
     </Link>
   )

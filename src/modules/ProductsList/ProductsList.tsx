@@ -9,7 +9,7 @@ type ProductsListProps = {
 
 const ProductsList: FC<ProductsListProps> = ({ data }) => {
   return (
-    <div className="grid auto-rows-auto grid-cols-2 overflow-hidden border-l border-t sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid auto-rows-auto grid-cols-3 overflow-hidden gap-x-5 gap-y-10">
       {data.map((item, index) => (
         <Card data={item} key={index} />
       ))}

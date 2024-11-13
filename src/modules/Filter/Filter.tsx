@@ -10,10 +10,10 @@ type FilterProps = {
 const Filter: FC<FilterProps> = ({ categories, category_id = 'all' }) => {
   return (
     <fieldset>
-      <div className="px-4 py-4 xl:px-6 xl:py-6">
-        <legend className="font-medium tracking-tight">Категории</legend>
+      <div className="pb-4 mb-8 border-b border-stroke">
+        <legend className="font-medium text-black text-xl">Категории</legend>
       </div>
-      <div className="px-4 pb-4 xl:px-6">
+      <div className="pb-4">
         <CategoriesFilter categories={categories} category_id={category_id} />
       </div>
     </fieldset>

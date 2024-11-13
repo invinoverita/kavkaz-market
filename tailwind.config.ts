@@ -11,7 +11,7 @@ module.exports = {
         sm: '1rem',
         lg: '4rem',
         xl: '5rem',
-        '2xl': '6rem',
+        '2xl': '5rem',
       },
     },
     colors: {

@@ -12,6 +12,8 @@ import { formattingProductToGoodCartProduct } from 'src/lib/utils';
 import _cloneDeep from 'lodash/cloneDeep';
 import Link from 'src/components/Link/Link';
 
+import cart from "public/icons/cart-white.svg";
+
 type TypeButtonCartProps = {
   data: TypeProduct;
   type?: 'common' | 'product' | 'cart';
@@ -86,8 +88,9 @@ const ButtonCart: FC<TypeButtonCartProps> = ({ data, type = 'common' }) => {
           return (
             <button
               onClick={handleAdd}
-              className="flex w-full items-center justify-center rounded-md bg-slate-200 px-8 py-3 font-medium sm:max-w-80"
+              className="flex w-max items-center gap-2 rounded-md bg-slate-200 px-5 py-2 bg-primary text-white text-base font-semibold"
             >
+              <img src={cart.src} />
               В корзину
             </button>
           );
@@ -116,8 +119,9 @@ const ButtonCart: FC<TypeButtonCartProps> = ({ data, type = 'common' }) => {
           return (
             <button
               onClick={handleAdd}
-              className="w-full rounded-lg bg-slate-200 px-4 py-1.5 text-sm font-medium outline-none transition-colors hover:bg-slate-100 sm:text-base"
+              className="flex w-max items-center gap-2 rounded-md border-2 border-primary bg-slate-200 px-5 py-2 bg-primary text-white text-base font-semibold"
             >
+              <img src={cart.src} />
               В корзину
             </button>
           );

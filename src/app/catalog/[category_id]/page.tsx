@@ -31,15 +31,16 @@ export async function generateMetadata({
 
   if (!category) {
     return notFound();
-  }
-  return {
-    title: `Каталог | ${category.name}`,
-    description: category.description ?? `Каталог`,
-    openGraph: {
+  } else {
+    return {
       title: `Каталог | ${category.name}`,
       description: category.description ?? `Каталог`,
-    },
-  };
+      openGraph: {
+        title: `Каталог | ${category.name}`,
+        description: category.description ?? `Каталог`,
+      },
+    };
+  }
 }
 
 const Catalog = async ({ params: { category_id } }: Props) => {
